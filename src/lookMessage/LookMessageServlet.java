@@ -4,14 +4,17 @@
  */
 package lookMessage;
 
-import java.io.IOException;
-import java.sql.*;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -26,7 +29,7 @@ public class LookMessageServlet extends HttpServlet {
             Statement stmt=null;
             ResultSet rs=null;
             Class.forName("com.mysql.jdbc.Driver");
-            String url="jdbc:mysql://localhost:3306/person?useUnicode=true&characterEncoding=gbk";
+            String url="jdbc:mysql://localhost:3306/graduation_204_person?useUnicode=true&characterEncoding=gbk";
             con=DriverManager.getConnection(url,"root","123456");
             stmt=con.createStatement();
             String sql="select * from user where userName='"+userName+"'";
@@ -54,8 +57,8 @@ public class LookMessageServlet extends HttpServlet {
         }catch(Exception e){
             e.printStackTrace();
         }
-        
-    } 
+
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

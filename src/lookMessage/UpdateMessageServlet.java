@@ -49,7 +49,7 @@ public class UpdateMessageServlet extends HttpServlet {
                 Statement stmt=null;
                 ResultSet rs=null;
                 Class.forName("com.mysql.jdbc.Driver");
-                String url="jdbc:mysql://localhost:3306/person?useUnicode=true&characterEncoding=gbk";
+                String url="jdbc:mysql://localhost:3306/graduation_204_person?useUnicode=true&characterEncoding=gbk";
                 con=DriverManager.getConnection(url,"root","123456");
                 stmt=con.createStatement();
                 String userName="";

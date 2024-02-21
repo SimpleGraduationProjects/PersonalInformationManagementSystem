@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
                 ResultSet rs=null;
                 Class.forName("com.mysql.jdbc.Driver");
                 /*url后面加的?useUnicode=true&characterEncoding=gbk，是为了处理向数据库中添加数据时出现乱码的问题。*/
-                String url="jdbc:mysql://localhost:3306/person?useUnicode=true&characterEncoding=gbk";
+                String url="jdbc:mysql://localhost:3306/graduation_204_person?useUnicode=true&characterEncoding=gbk";
                 con=DriverManager.getConnection(url,"root","123456");
                 stmt=con.createStatement();
                 String sql="select * from user where userName='"+userName+"'";
